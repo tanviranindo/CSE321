@@ -1,7 +1,7 @@
-
+import java.io.*;
 import java.util.*;
 
-class Banker {
+public class Banker {
     static int n, m;
     static int[] safe = new int[n + 10];
 
@@ -41,7 +41,7 @@ class Banker {
 
     public static void main(String[] args) throws IOException {
 
-        File file = new File("C:\\Users\\terabaka\\Documents\\GitHub\\CSE321\\Lab-06\\input.txt");
+        File file = new File("C:\\Users\\terabaka\\IdeaProjects\\CSE321\\Lab-06\\input.txt");
         Scanner input = new Scanner(file);
 
         // System.out.println("Enter no. of processes");
@@ -74,7 +74,7 @@ class Banker {
             // System.out.println("Enter no. of available instances of resource " + i);
             available[i] = input.nextInt();
         }
-        
+
         input.close();
 
         int[][] need = new int[n][m];
