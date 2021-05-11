@@ -1,8 +1,6 @@
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.StringTokenizer;
+import java.util.Scanner;
 
 /**
  * @Name: Tanvir Rahman
@@ -58,39 +56,30 @@ public class Banker {
     public static void main(String[] args) throws IOException {
 
         File file = new File("C:\\Users\\terabaka\\IdeaProjects\\CSE321\\Lab-06\\input.txt");
-        BufferedReader input = new BufferedReader(new FileReader(file));
-        StringTokenizer st;
+        Scanner input = new Scanner(file);
 
-        processes = Integer.parseInt(input.readLine());
-        resources = Integer.parseInt(input.readLine());
+        processes = input.nextInt();
+        resources = input.nextInt();
 
-        input.readLine();
         int[][] max = new int[processes][resources];
 
         for (int i = 0; i < processes; i++) {
-            st = new StringTokenizer(input.readLine());
             for (int j = 0; j < resources; j++) {
-                max[i][j] = Integer.parseInt(st.nextToken());
+                max[i][j] = input.nextInt();
             }
         }
 
-        input.readLine();
         int[][] allocation = new int[processes][resources];
 
         for (int i = 0; i < processes; i++) {
-            st = new StringTokenizer(input.readLine());
             for (int j = 0; j < resources; j++) {
-                allocation[i][j] = Integer.parseInt(st.nextToken());
+                allocation[i][j] = input.nextInt();
             }
         }
 
-        input.readLine();
         int[] available = new int[resources];
 
-        st = new StringTokenizer(input.readLine());
-        for (int i = 0; i < resources; i++) {
-            available[i] = Integer.parseInt(st.nextToken());
-        }
+        for (int i = 0; i < resources; i++) available[i] = input.nextInt();
 
         input.close();
 
