@@ -55,7 +55,7 @@ public class Banker {
 
     public static void main(String[] args) throws IOException {
 
-        File file = new File("C:\\Users\\terabaka\\IdeaProjects\\CSE321\\Lab-06\\input.txt");
+        File file = new File("input.txt");
         Scanner input = new Scanner(file);
 
         processes = input.nextInt();
